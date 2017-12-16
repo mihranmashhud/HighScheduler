@@ -37,32 +37,28 @@
   
 
   <script type="text/x-template" id="page">
-    <v-layout column align-center>
+    <v-layout column>
       <timeline></timeline>
     </v-layout>
   </script>
 
   <script type="text/x-template" id="timeline">
-    <v-container grid-list-xl>
-      <v-layout>
-        <v-flex xs2>
-          <v-card color="white">
-            <v-card-text>12 AM</v-card-text>
-            <v-divider></v-divider>
-            <template v-for="n in 11">
-              <v-card-text>{{ n }} AM</v-card-text>
-              <v-divider></v-divider>
-            </template>
-            <v-card-text>12 PM</v-card-text>
-            <v-divider></v-divider>
-            <template v-for="n in 11">
-              <v-card-text>{{ n }} PM</v-card-text>
-              <v-divider></v-divider>
-            </template>
-          </v-card>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    <v-flex xs1>
+      <v-card color="white">
+        <v-card-text>12 AM</v-card-text>
+        <v-divider></v-divider>
+        <template v-for="n in 11">
+          <v-card-text>{{ n }} AM</v-card-text>
+          <v-divider></v-divider>
+        </template>
+        <v-card-text>12 PM</v-card-text>
+        <v-divider></v-divider>
+        <template v-for="n in 11">
+          <v-card-text>{{ n }} PM</v-card-text>
+          <v-divider></v-divider>
+        </template>
+      </v-card>
+    </v-flex>
   </script>
 
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
