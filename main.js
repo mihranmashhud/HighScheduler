@@ -4,7 +4,7 @@ Vue.component("page", {
 Vue.component("timeline", {
   template: "#timeline"
 });
-new Vue({
+const app = new Vue({
   el: "#app",
   data: () => ({
     // fixed: false,
@@ -26,14 +26,14 @@ new Vue({
     fixed: true,
 
     //Subject Form data
+    subjects: [],
     valid: false,
     subject: "",
     subjectRules: [v => !!v || "Subject is required"],
     begins: "",
     beginsRules: [v => !!v || "Beginning time is required"],
     ends: "",
-    endsRules: [v => !!v || "Ending time is required"],
-    subjects: []
+    endsRules: [v => !!v || "Ending time is required"]
   }),
   watch: {
     top(val) {
@@ -66,13 +66,17 @@ new Vue({
 
   methods: {
     addSubject: () => {
-      this.subjects.push({
-        subject: this.subject,
-        beginHour: this.begins.split(":")[0],
-        beginMinute: this.begins.split(":")[1],
-        endHour:
-
-      })
+      console.log("worked");
+      this.dialog = false;
+      // this.subjects.push(
+      //   {
+      //     subject: this.subject,
+      //     beginHour: this.begins.split(":")[0],
+      //     beginMinute: this.begins.split(":")[1],
+      //     endHour: this.ends.split(":")[0],
+      //     endMinute: this.ends.split(":")[1]
+      //   }
+      // );
     }
   }
 });
