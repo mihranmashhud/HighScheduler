@@ -46,6 +46,21 @@
         </v-card>
       </v-flex>
 
+      <!--Event Form-->
+      <v-dialog v-model="dialog" max-width="290">
+        <v-card>
+          <v-card-title class="headline">Use Google's location service?</v-card-title>
+          <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps
+            are running.</v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
+            <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Agree</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+      <!--FAB-->
       <v-speed-dial v-model="fab" fixed bottom right direction="left" hover>
         <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
           <v-icon>account_circle</v-icon>
@@ -54,7 +69,7 @@
         <v-btn fab dark small color="green">
           <v-icon>edit</v-icon>
         </v-btn>
-        <v-btn fab dark small color="indigo">
+        <v-btn fab dark small color="indigo" @click.native.stop="dialog = true">
           <v-icon>add</v-icon>
         </v-btn>
         <v-btn fab dark small color="red">
@@ -64,7 +79,6 @@
     </v-app>
   </div>
 
-
   <script type="text/x-template" id="page">
     <v-layout row>
       <timeline></timeline>
@@ -72,7 +86,7 @@
   </script>
 
   <script type="text/x-template" id="timeline">
-    <v-flex>
+    <v-flex xs1>
       <v-card color="white">
         <v-card-text>12 AM</v-card-text>
         <v-divider></v-divider>
@@ -89,7 +103,6 @@
       </v-card>
     </v-flex>
   </script>
-
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
   <script src="main.js"></script>
