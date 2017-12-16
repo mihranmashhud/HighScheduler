@@ -32,19 +32,6 @@
           <page></page>
         </v-container>
       </v-content>
-      <v-flex xs2>
-        <v-card>
-          <v-card-title primary-title>
-            <div class="headline">Unlimited music now</div>
-          </v-card-title>
-          <v-card-text>
-            Add Event:
-          </v-card-text>
-          <v-card-actions>
-            <v-btn flat dark>Listen now</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-flex>
 
       <v-speed-dial v-model="fab" fixed bottom right direction="left" hover>
         <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
@@ -68,11 +55,24 @@
   <script type="text/x-template" id="page">
     <v-layout row>
       <timeline></timeline>
+      <v-flex xs2>
+        <v-card>
+          <v-card-title primary-title>
+            <div class="headline">Unlimited music now</div>
+          </v-card-title>
+          <v-card-text>
+            Add Event:
+          </v-card-text>
+          <v-card-actions>
+            <v-btn flat dark>Listen now</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
     </v-layout>
   </script>
 
   <script type="text/x-template" id="timeline">
-    <v-flex>
+    <v-flex xs1>
       <v-card color="white">
         <v-card-text>12 AM</v-card-text>
         <v-divider></v-divider>
