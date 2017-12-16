@@ -1,85 +1,61 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>High Scheduler</title>
-  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
-  <link href="https://unpkg.com/vuetify/dist/vuetify.min.css" rel="stylesheet" type="text/css"></link>
-  <link href="styles.css" rel="stylesheet" type="text/css">
-  <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
-</head>
-
-<body>
-  <div id="app">
-    <v-app>
-        <template>
-          <v-toolbar>
-            <v-toolbar-title>High Scheduler</v-toolbar-title>
+<template>
+    <div id="e3" style="max-width: 400px; margin: auto;" class="grey lighten-3">
+        <v-toolbar color="pink">
+            <v-toolbar-side-icon></v-toolbar-side-icon>
+            <v-toolbar-title class="white--text">My Music</v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
-            <v-toolbar-items class="hidden-sm-and-down">
-              <v-btn flat>Day</v-btn>
-              <v-btn flat>Week</v-btn>
-              <v-btn flat>Month</v-btn>
-            </v-toolbar-items>
-          </v-toolbar>
-        </template>
-      <v-content>
-        <v-container fluid>
-          <page></page>
+            <v-btn icon>
+                <v-icon>search</v-icon>
+            </v-btn>
+        </v-toolbar>
+        <v-container fluid style="min-height: 0;" grid-list-lg>
+            <v-layout row wrap>
+                <v-flex xs12>
+                    <v-card color="blue-grey darken-2" class="white--text">
+                        <v-card-title primary-title>
+                            <div class="headline">Unlimited music now</div>
+                            <div>Listen to your favorite artists and albums whenever and wherever, online and offline.</div>
+                        </v-card-title>
+                        <v-card-actions>
+                            <v-btn flat dark>Listen now</v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12>
+                    <v-card color="cyan darken-2" class="white--text">
+                        <v-container fluid grid-list-lg>
+                            <v-layout row>
+                                <v-flex xs7>
+                                    <div>
+                                        <div class="headline">Supermodel</div>
+                                        <div>Foster the People</div>
+                                    </div>
+                                </v-flex>
+                                <v-flex xs5>
+                                    <v-card-media src="/static/doc-images/cards/foster.jpg" height="125px" contain></v-card-media>
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                    </v-card>
+                </v-flex>
+                <v-flex xs12>
+                    <v-card color="purple" class="white--text">
+                        <v-container fluid grid-list-lg>
+                            <v-layout row>
+                                <v-flex xs7>
+                                    <div>
+                                        <div class="headline">Halycon Days</div>
+                                        <div>Ellie Goulding</div>
+                                    </div>
+                                </v-flex>
+                                <v-flex xs5>
+                                    <v-card-media src="/static/doc-images/cards/halcyon.png" height="125px" contain></v-card-media>
+                                </v-flex>
+                            </v-layout>
+                        </v-container>
+                    </v-card>
+                </v-flex>
+            </v-layout>
         </v-container>
-      </v-content>
-      <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction" :hover="hover"
-        :transition="transition">
-        <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
-          <v-icon>account_circle</v-icon>
-          <v-icon>close</v-icon>
-        </v-btn>
-        <v-btn fab dark small color="green">
-          <v-icon>edit</v-icon>
-        </v-btn>
-        <v-btn fab dark small color="indigo">
-          <v-icon>add</v-icon>
-        </v-btn>
-        <v-btn fab dark small color="red">
-          <v-icon>delete</v-icon>
-        </v-btn>
-      </v-speed-dial>
-    </v-app>
-  </div>
-  
-
-  <script type="text/x-template" id="page">
-    <v-layout column>
-      <timeline></timeline>
-    </v-layout>
-  </script>
-
-  <script type="text/x-template" id="timeline">
-    <v-flex xs1>
-      <v-card color="white">
-        <v-card-text>12 AM</v-card-text>
-        <v-divider></v-divider>
-        <template v-for="n in 11">
-          <v-card-text>{{ n }} AM</v-card-text>
-          <v-divider></v-divider>
-        </template>
-        <v-card-text>12 PM</v-card-text>
-        <v-divider></v-divider>
-        <template v-for="n in 11">
-          <v-card-text>{{ n }} PM</v-card-text>
-          <v-divider></v-divider>
-        </template>
-      </v-card>
-    </v-flex>
-  </script>
-
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-  <script src="main.js"></script>
-</body>
-
-</html>
+    </div>
+</template>

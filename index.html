@@ -15,23 +15,37 @@
 <body>
   <div id="app">
     <v-app>
-        <template>
-          <v-toolbar>
-            <v-toolbar-title>High Scheduler</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
-            <v-toolbar-items class="hidden-sm-and-down">
-              <v-btn flat>Day</v-btn>
-              <v-btn flat>Week</v-btn>
-              <v-btn flat>Month</v-btn>
-            </v-toolbar-items>
-          </v-toolbar>
-        </template>
+      <template>
+        <v-toolbar>
+          <v-toolbar-title>High Scheduler</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+          <v-toolbar-items class="hidden-sm-and-down">
+            <v-btn flat>Day</v-btn>
+            <v-btn flat>Week</v-btn>
+            <v-btn flat>Month</v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
+      </template>
       <v-content>
         <v-container fluid>
           <page></page>
         </v-container>
       </v-content>
+      <v-flex xs2>
+        <v-card>
+          <v-card-title primary-title>
+            <div class="headline">Unlimited music now</div>
+          </v-card-title>
+          <v-card-text>
+            Add Event:
+          </v-card-text>
+          <v-card-actions>
+            <v-btn flat dark>Listen now</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
+
       <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction" :hover="hover"
         :transition="transition">
         <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
@@ -50,10 +64,10 @@
       </v-speed-dial>
     </v-app>
   </div>
-  
+
 
   <script type="text/x-template" id="page">
-    <v-layout column>
+    <v-layout row>
       <timeline></timeline>
     </v-layout>
   </script>
