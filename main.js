@@ -65,18 +65,16 @@ const app = new Vue({
   },
 
   methods: {
-    addSubject: () => {
+    addSubject: function() {
       console.log("worked");
       this.dialog = false;
-      // this.subjects.push(
-      //   {
-      //     subject: this.subject,
-      //     beginHour: this.begins.split(":")[0],
-      //     beginMinute: this.begins.split(":")[1],
-      //     endHour: this.ends.split(":")[0],
-      //     endMinute: this.ends.split(":")[1]
-      //   }
-      // );
+      this.subjects.push({
+        subject: this.subject,
+        beginHour: this.begins.split(":")[0],
+        beginMinute: this.begins.split(":")[1],
+        endHour: this.ends.split(":")[0],
+        endMinute: this.ends.split(":")[1]
+      });
     }
   }
 });
