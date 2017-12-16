@@ -32,7 +32,8 @@
           <page></page>
         </v-container>
       </v-content>
-      <v-speed-dial v-model="fab" fixed bottom right direction="left" hover>
+      <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction" :hover="hover"
+        :transition="transition">
         <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
           <v-icon>account_circle</v-icon>
           <v-icon>close</v-icon>
@@ -49,7 +50,7 @@
       </v-speed-dial>
     </v-app>
   </div>
-
+  
 
   <script type="text/x-template" id="page">
     <v-layout column>
@@ -58,7 +59,7 @@
   </script>
 
   <script type="text/x-template" id="timeline">
-    <v-flex>
+    <v-flex xs1>
       <v-card color="white">
         <v-card-text>12 AM</v-card-text>
         <v-divider></v-divider>
