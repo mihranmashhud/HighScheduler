@@ -34,15 +34,23 @@
       </v-content>
 
       <!--Event Form-->
-      <v-dialog v-model="dialog" max-width="290">
+      <v-dialog v-model="dialog" max-width="500">
         <v-card>
-          <v-card-title class="headline">Use Google's location service?</v-card-title>
-          <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps
-            are running.</v-card-text>
+          <v-card-title class="headline">Add Subject</v-card-title>
+          <v-card-text>Add a subject category for HighScheduler to recognize:</v-card-text>
+          <v-form v-model="valid" class="pl-4 pr-4">
+            <v-text-field label="Subject" v-model="subject" required>
+          </v-form>
+          <v-form v-model="valid" class="pl-4 pr-4">
+            <v-text-field label="Begins" v-model="begins" required>
+          </v-form>
+          <v-form v-model="valid" class="pl-4 pr-4">
+            <v-text-field label="Ends" v-model="ends" required>
+          </v-form>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
-            <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Agree</v-btn>
+            <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Add Subject</v-btn>
+            <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -77,9 +85,6 @@
           <v-card-text>
             Chem Test Tuesday
           </v-card-text>
-          <v-card-actions>
-            <v-btn flat dark>Listen now</v-btn>
-          </v-card-actions>
         </v-card>
       </v-flex>
     </v-layout>
