@@ -4,13 +4,8 @@ Vue.component("page", {
 new Vue({
   el: "#app",
   data: {
-    clipped: false,
-    drawer: true,
     fixed: false,
-    items: [{ icon: "bubble_chart", title: "Inspire" }],
-    miniVariant: false,
-    right: true,
-    rightDrawer: false,
+    items: "",
     title: "HighScheduler"
   }
 });
