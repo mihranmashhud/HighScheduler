@@ -23,6 +23,22 @@
           <page></page>
         </v-container>
       </v-content>
+      <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction" :hover="hover"
+        :transition="transition">
+        <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
+          <v-icon>account_circle</v-icon>
+          <v-icon>close</v-icon>
+        </v-btn>
+        <v-btn fab dark small color="green">
+          <v-icon>edit</v-icon>
+        </v-btn>
+        <v-btn fab dark small color="indigo">
+          <v-icon>add</v-icon>
+        </v-btn>
+        <v-btn fab dark small color="red">
+          <v-icon>delete</v-icon>
+        </v-btn>
+      </v-speed-dial>
     </v-app>
   </div>
 
@@ -39,8 +55,7 @@
 
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
-  <script src="main.js">
-  </script>
+  <script src="main.js"></script>
 </body>
 
 </html>
