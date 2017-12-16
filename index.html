@@ -32,19 +32,6 @@
           <page></page>
         </v-container>
       </v-content>
-      <v-flex xs1>
-        <v-card>
-          <v-card-title primary-title>
-            <div class="headline">Unlimited music now</div>
-          </v-card-title>
-          <v-card-text>
-            Add Event:
-          </v-card-text>
-          <v-card-actions>
-            <v-btn flat dark>Listen now</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-flex>
 
       <!--Event Form-->
       <v-dialog v-model="dialog" max-width="290">
@@ -82,6 +69,19 @@
   <script type="text/x-template" id="page">
     <v-layout row>
       <timeline></timeline>
+      <v-flex xs1>
+        <v-card>
+          <v-card-title primary-title>
+            <div class="headline">Period 1: </div>
+          </v-card-title>
+          <v-card-text>
+            Chem Test Tuesday
+          </v-card-text>
+          <v-card-actions>
+            <v-btn flat dark>Listen now</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-flex>
     </v-layout>
   </script>
 
