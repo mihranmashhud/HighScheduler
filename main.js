@@ -7,7 +7,7 @@ Vue.component("timeline", {
 new Vue({
   el: "#app",
   data: () => ({
-    fixed: false,
+    // fixed: false,
     items: "",
     title: "HighScheduler",
 
@@ -20,7 +20,8 @@ new Vue({
     right: true,
     bottom: true,
     left: false,
-    transition: "slide-y-reverse-transition"
+    transition: "slide-y-reverse-transition",
+    fixed: true
   }),
   watch: {
     top(val) {
