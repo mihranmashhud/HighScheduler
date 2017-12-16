@@ -15,9 +15,18 @@
 <body>
   <div id="app">
     <v-app>
-      <v-toolbar fixed app>
-        <v-toolbar-title>{{title}}</v-toolbar-title>
-      </v-toolbar>
+        <template>
+          <v-toolbar>
+            <v-toolbar-title>Title</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+            <v-toolbar-items class="hidden-sm-and-down">
+              <v-btn flat>Link One</v-btn>
+              <v-btn flat>Link Two</v-btn>
+              <v-btn flat>Link Three</v-btn>
+            </v-toolbar-items>
+          </v-toolbar>
+        </template>
       <v-content>
         <v-container fluid>
           <page></page>
@@ -41,16 +50,31 @@
       </v-speed-dial>
     </v-app>
   </div>
+  
 
   <script type="text/x-template" id="page">
-    <v-layout column align-center>
-      <div>
-        <img src="./v.png" alt="Vuetify.js" class="mb-5" height="100px" />
-      </div>
-      <blockquote>
-        &#8220;First, solve the problem. Then, write the code.&#8221;
-      </blockquote>
+    <v-layout column>
+      <timeline></timeline>
     </v-layout>
+  </script>
+
+  <script type="text/x-template" id="timeline">
+    <v-flex xs1>
+      <v-card color="white">
+        <v-card-text>12 AM</v-card-text>
+        <v-divider></v-divider>
+        <template v-for="n in 11">
+          <v-card-text>{{ n }} AM</v-card-text>
+          <v-divider></v-divider>
+        </template>
+        <v-card-text>12 PM</v-card-text>
+        <v-divider></v-divider>
+        <template v-for="n in 11">
+          <v-card-text>{{ n }} PM</v-card-text>
+          <v-divider></v-divider>
+        </template>
+      </v-card>
+    </v-flex>
   </script>
 
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
