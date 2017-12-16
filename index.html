@@ -15,25 +15,24 @@
 <body>
   <div id="app">
     <v-app>
-        <template>
-          <v-toolbar>
-            <v-toolbar-title>Title</v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
-            <v-toolbar-items class="hidden-sm-and-down">
-              <v-btn flat>Link One</v-btn>
-              <v-btn flat>Link Two</v-btn>
-              <v-btn flat>Link Three</v-btn>
-            </v-toolbar-items>
-          </v-toolbar>
-        </template>
+      <template>
+        <v-toolbar>
+          <v-toolbar-title>Title</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+          <v-toolbar-items class="hidden-sm-and-down">
+            <v-btn flat>Link One</v-btn>
+            <v-btn flat>Link Two</v-btn>
+            <v-btn flat>Link Three</v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
+      </template>
       <v-content>
         <v-container fluid>
           <page></page>
         </v-container>
       </v-content>
-      <v-speed-dial v-model="fab" :top="top" :bottom="bottom" :right="right" :left="left" :direction="direction" :hover="hover"
-        :transition="transition">
+      <v-speed-dial v-model="fab" fixed bottom right direction="left" hover>
         <v-btn slot="activator" color="blue darken-2" dark fab hover v-model="fab">
           <v-icon>account_circle</v-icon>
           <v-icon>close</v-icon>
@@ -50,7 +49,7 @@
       </v-speed-dial>
     </v-app>
   </div>
-  
+
 
   <script type="text/x-template" id="page">
     <v-layout column>
@@ -59,7 +58,7 @@
   </script>
 
   <script type="text/x-template" id="timeline">
-    <v-flex xs1>
+    <v-flex>
       <v-card color="white">
         <v-card-text>12 AM</v-card-text>
         <v-divider></v-divider>
