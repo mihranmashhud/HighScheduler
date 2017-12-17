@@ -1,6 +1,3 @@
-Vue.component("page", {
-  template: "#page"
-});
 Vue.component("timeline", {
   template: "#timeline"
 });
@@ -66,14 +63,11 @@ const app = new Vue({
 
   methods: {
     addSubject: function() {
-      console.log("worked");
       this.dialog = false;
       this.subjects.push({
         subject: this.subject,
-        beginHour: this.begins.split(":")[0],
-        beginMinute: this.begins.split(":")[1],
-        endHour: this.ends.split(":")[0],
-        endMinute: this.ends.split(":")[1]
+        beginTime: moment(this.begins, ['h:m a', 'H:m']),
+        endTime: moment(this.ends, ['h:m a', 'H:m'])
       });
     }
   }

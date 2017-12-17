@@ -15,21 +15,36 @@
 <body>
   <div id="app">
     <v-app>
-      <template>
-        <v-toolbar>
-          <v-toolbar-title>High Scheduler</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
-          <v-toolbar-items class="hidden-sm-and-down">
-            <v-btn flat>Day</v-btn>
-            <v-btn flat>Week</v-btn>
-            <v-btn flat>Month</v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-      </template>
+      <v-toolbar>
+        <v-toolbar-title>High Scheduler</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
+        <v-toolbar-items class="hidden-sm-and-down">
+          <v-btn flat>Day</v-btn>
+          <v-btn flat>Week</v-btn>
+          <v-btn flat>Month</v-btn>
+        </v-toolbar-items>
+      </v-toolbar>
       <v-content>
         <v-container fluid>
-          <page></page>
+          <v-layout row wrap>
+            <timeline></timeline>
+            <v-layout column>
+              <v-flex xs12 v-for="(subject, i) in subjects" :key="i">
+                <div :style="{ position: 'absolute', top: (subject.beginTime.hour() * 60 + subject.beginTime.minute() + 64) + 'px' }">
+                  <v-card class="ml-2" :height="subject.endTime.diff(subject.beginTime, 'minutes') + 'px'">
+                    <v-card-title primary-title>
+                      <div class="headline">Period {{ i + 1 }}: </div>
+                    </v-card-title>
+                    <v-card-text>
+                      TODO: put events here
+                    </v-card-text>
+                  </v-card>
+                </div>
+              </v-flex>
+            </v-layout>
+
+          </v-layout>
         </v-container>
       </v-content>
 
@@ -74,62 +89,6 @@
     </v-app>
   </div>
 
-  <script type="text/x-template" id="page">
-    <v-layout row wrap>
-      <timeline></timeline>
-      <v-layout column>
-
-
-        <v-flex xs12>
-          <v-card id="card1">
-            <v-card-title primary-title>
-              <div class="headline">Period 1: </div>
-            </v-card-title>
-            <v-card-text>
-              Chem Test Tuesday
-            </v-card-text>
-          </v-card>
-        </v-flex>
-
-        <v-flex xs12>
-
-          <v-card id="card2">
-            <v-card-title primary-title>
-              <div class="headline">Period 2: </div>
-            </v-card-title>
-            <v-card-text>
-              Bio Test Tuesday
-            </v-card-text>
-          </v-card>
-        </v-flex>
-
-        <v-flex xs12>
-          <v-card id="card3">
-            <v-card-title primary-title>
-              <div class="headline">Period 3: </div>
-            </v-card-title>
-            <v-card-text>
-              Bio Test Tuesday
-            </v-card-text>
-          </v-card>
-        </v-flex>
-
-        <v-flex xs12>
-          <v-card id="card4">
-            <v-card-title primary-title>
-              <div class="headline">Period 4: </div>
-            </v-card-title>
-            <v-card-text>
-              Bio Test Tuesday
-            </v-card-text>
-          </v-card>
-        </v-flex>
-
-      </v-layout>
-
-    </v-layout>
-  </script>
-
   <script type="text/x-template" id="timeline">
     <v-flex xs1>
       <v-card color="white" height="1440px">
@@ -150,6 +109,7 @@
   </script>
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vuetify/dist/vuetify.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
   <script src="main.js"></script>
 </body>
 
