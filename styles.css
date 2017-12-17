@@ -38,7 +38,7 @@
 
 #card2{
   position: absolute;
-  top: 651px;
+  top: 681px;
   width: 1222px;
   height: 90px;
   background-color: rgb(255, 138, 144);
@@ -47,14 +47,16 @@
 
 #card3{
   position: absolute;
-  top: 770px;
+  top: 800px;
   width: 1222px;
+  height: 90px;
   background-color: rgb(145, 250, 145);
 }
 
 #card4{
   position: absolute;
-  top: 897px;
+  top: 927px;
   width: 1222px;
+  height: 90px;
   background-color: rgb(252, 206, 121);
 }
