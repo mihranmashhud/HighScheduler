@@ -15,7 +15,7 @@
 <body>
   <div id="app">
     <v-app>
-      <v-toolbar>
+      <v-toolbar height="64px">
         <v-toolbar-title>High Scheduler</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-side-icon class="hidden-md-and-up"></v-toolbar-side-icon>
@@ -31,7 +31,7 @@
             <timeline></timeline>
             <v-layout column>
               <v-flex xs12 v-for="(subject, i) in subjects" :key="i">
-                <div :style="{ position: 'absolute', top: (subject.beginTime.hour() * 60 + subject.beginTime.minute() + 64) + 'px' }">
+                <div :style="{ position: 'absolute', top: (subject.beginTime.hour() * 60 + subject.beginTime.minute() + 80) + 'px' }">
                   <v-card class="ml-2" :height="subject.endTime.diff(subject.beginTime, 'minutes') + 'px'">
                     <v-card-title primary-title>
                       <div class="headline">Period {{ i + 1 }}: </div>
